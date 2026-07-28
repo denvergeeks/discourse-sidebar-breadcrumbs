@@ -1,0 +1,23 @@
+hide_header_category_breadcrumb:
+  default: true
+  client: true
+  description:
+    en: "Hide the built-in .category-breadcrumb in the header when the sidebar breadcrumbs are shown."
+
+sidebar_breadcrumb_section_title:
+  default: "Location"
+  client: true
+  description:
+    en: "Title of the sidebar section that shows the current category/topic breadcrumb."
+
+sidebar_breadcrumb_show_on_topics:
+  default: true
+  client: true
+  description:
+    en: "Show breadcrumb section on topic routes."
+
+sidebar_breadcrumb_show_on_categories:
+  default: true
+  client: true
+  description:
+    en: "Show breadcrumb section on category and tag routes."
