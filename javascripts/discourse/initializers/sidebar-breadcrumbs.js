@@ -10,19 +10,20 @@ export default {
     withPluginApi(PLUGIN_API_VERSION, (api) => {
       const router = container.lookup("router:main");
 
-      const themeSettings = container.lookup("service:theme-settings")[
-        "theme-settings:main"
-      ];
+const themeSettingsService = container.lookup("service:theme-settings");
+const themeSettings =
+  themeSettingsService && themeSettingsService["theme-settings:main"]
+    ? themeSettingsService["theme-settings:main"]
+    : {};
 
-      const sectionTitle =
-        (themeSettings && themeSettings.sidebar_breadcrumb_section_title) ||
-        "Location";
+const sectionTitle =
+  themeSettings.sidebar_breadcrumb_section_title || "Location";
 
-      const showOnTopics =
-        themeSettings?.sidebar_breadcrumb_show_on_topics ?? true;
+const showOnTopics =
+  themeSettings.sidebar_breadcrumb_show_on_topics ?? true;
 
-      const showOnCategories =
-        themeSettings?.sidebar_breadcrumb_show_on_categories ?? true;
+const showOnCategories =
+  themeSettings.sidebar_breadcrumb_show_on_categories ?? true;
 
       api.addSidebarSection(
         (BaseCustomSidebarSection, BaseCustomSidebarSectionLink) => {
